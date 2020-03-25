@@ -19,7 +19,8 @@ import { UpdateCarteComponent } from './update-carte/update-carte.component';
 import { UpdateOperationComponent } from './update-operation/update-operation.component';
 import { UpdateRoleComponent } from './update-role/update-role.component';
 import { HeaderComponent } from './header/header.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,10 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

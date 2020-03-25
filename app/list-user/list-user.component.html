@@ -1,1 +1,26 @@
-<p>list-user works!</p>
+<div class="container">
+    <h1>Liste des utilisateurs</h1>
+    <table class="table">  
+    <thead class="thead-dark">
+        <th scope="col">Id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Identifiant</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Rôle</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unUser of listUser" >
+        <th scope="row">{{unUser.idUser}}</th>
+        <td>{{unUser.nomUser}}</td>
+        <td>{{unUser.prenomUser}}</td>
+        <td>{{unUser.identifiant}}</td>
+        <td>{{unUser.emailUser}}</td>
+        <td>{{unUser.role.nomRole}}</td>
+        <td><button class="btn btn-danger"  (click)="deleteUser(unUser.idUser, unUser.nomUser)">Supprimer</button>
+            <a class="btn btn-primary"  [routerLink]="['/User/update/'+unUser.idUser]">Modifier</a></td>
+              </tr>    
+    </tbody>
+</table>
+</div>
