@@ -47,7 +47,7 @@ newUser: User=new User();
               'success'
               
             ).then( () => {
-              window.location.href = "http://localhost:4200/user"
+              window.location.href = "http://localhost:4200/user/list"
             })
             
           }
@@ -64,7 +64,7 @@ newUser: User=new User();
           "L'utilisateur "+prenomUser+" "+nomUser+" est sauvegardé.",
           'error'
         ).then( () => {
-          window.location.href = "http://localhost:4200/user"
+          window.location.href = "http://localhost:4200/user/list"
         })
         
       }

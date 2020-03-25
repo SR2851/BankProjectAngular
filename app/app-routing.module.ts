@@ -59,23 +59,23 @@ const routes: Routes = [
     component: ListOperationComponent
   },
   {
-    path: "user/update",
+    path: "user/update/:id",
     component: UpdateUserComponent
   },
   {
-    path: "role/update",
+    path: "role/update/:id",
     component: UpdateRoleComponent
   },
   {
-    path: "carte/update",
+    path: "carte/update/:id",
     component: UpdateCarteComponent
   },
   {
-    path: "compte/update",
+    path: "compte/update/:id",
     component: UpdateCompteComponent
   },
   {
-    path: "operation/update",
+    path: "operation/update/:id",
     component: UpdateOperationComponent
   },
 ];

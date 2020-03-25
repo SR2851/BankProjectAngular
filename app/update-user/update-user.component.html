@@ -1,1 +1,28 @@
-<p>update-user works!</p>
+<div class="container">
+    <form>
+        <div class="form-group">
+          <h1>Modifier un utilisateur:</h1>
+          <label>Nom</label><br>
+            <input type="text" name="nomUser" class="form-control" id="nomUser"
+                [(ngModel)]="newUser.nomUser" placeholder="Nom de l'utilisateur"><br>
+            <label>Prénom</label><br>
+            <input type="text" name="prenomUser" class="form-control" id="prenomUser"
+                [(ngModel)]="newUser.prenomUser" placeholder="Prénom de l'utilisateur"><br>
+            <label>Identifiant:</label><br>
+            <input type="text" name="identifiant" class="form-control" id="identifiant"
+                [(ngModel)]="newUser.identifiant" placeholder="identifiant de l'utilisateur"><br>
+                <label>Mot de passe:</label><br>
+                <input type="password" name="password" class="form-control" id="password"
+                    [(ngModel)]="newUser.password" placeholder="saisissez un mot de passe"><br>
+                    <label>Email:</label><br>
+            <input type="text" name="emailUser" class="form-control" id="emailUser"
+                [(ngModel)]="newUser.emailUser" placeholder="adresse mail de l'utilisateur"><br>
+            <label for="role">Rôle:</label><br>
+            <select name="role" [compareWith]="compareFn" class="form-control" id="role" [(ngModel)]="newUser.role" >
+                <option *ngFor="let unRole of listRole" [ngValue]="unRole">{{unRole.nomRole}}</option>
+            </select>
+
+            <input type="submit" value="Modifier" class="btn btn-dark" (click)="updateUser(newUser.idUser, newUser)">
+        </div>
+    </form>
+</div>
