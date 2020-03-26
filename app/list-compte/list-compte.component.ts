@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Compte } from '../Model/Compte';
 import { CompteService } from '../Service/Compte.service';
 import Swal from 'sweetalert2';
+import { User } from '../Model/User';
+import { UserService } from '../Service/user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list-compte',
@@ -11,11 +14,14 @@ import Swal from 'sweetalert2';
 export class ListCompteComponent implements OnInit {
 listCompte: Compte[]=[];
 newCompte: Compte = new Compte();
+newUser: User=new User();
+  idUserURL: number;
 
-  constructor(private compteService: CompteService) { }
 
+  constructor(private compteService: CompteService, private userService: UserService, private route: ActivatedRoute) {this.idUserURL = parseInt(this.route.snapshot.paramMap.get('id'));}
   ngOnInit(): void {
-    this.compteService.getAll().subscribe(
+    console.log(this.idUserURL)
+    this.compteService.getByUser(this.idUserURL).subscribe(
       data => {
         this.listCompte=data;
       }
@@ -48,7 +54,7 @@ newCompte: Compte = new Compte();
               'success'
               
             ).then( () => {
-              window.location.href = "http://localhost:4200/compte/list"
+              window.location.href = "http://localhost:4200/user/list/"
             })
             
           }
@@ -65,7 +71,7 @@ newCompte: Compte = new Compte();
           "Le compte "+numeroCompte+" "+libelle+" est sauvegardé.",
           'error'
         ).then( () => {
-          window.location.href = "http://localhost:4200/compte/list"
+          window.location.href = "http://localhost:4200/user/list/"
         })
         
       }

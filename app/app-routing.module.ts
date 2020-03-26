@@ -17,6 +17,7 @@ import { UpdateCompteComponent } from './update-compte/update-compte.component';
 import { UpdateOperationComponent } from './update-operation/update-operation.component';
 
 
+
 const routes: Routes = [
   {
     path: "user",
@@ -51,9 +52,11 @@ const routes: Routes = [
     component: ListCarteComponent
   },
   {
-    path: "compte/list",
+    path: "compte/list/:id",
     component: ListCompteComponent
   },
+  
+  
   {
     path: "operation/list",
     component: ListOperationComponent

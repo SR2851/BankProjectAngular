@@ -21,6 +21,9 @@ import { UpdateRoleComponent } from './update-role/update-role.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +42,9 @@ import {FormsModule} from '@angular/forms';
     UpdateCarteComponent,
     UpdateOperationComponent,
     UpdateRoleComponent,
-    HeaderComponent
+    HeaderComponent,
+   
+  
   ],
   imports: [
     BrowserModule,

@@ -25,4 +25,7 @@ export class CompteService {
   getById(idCompte: number){
 return this.http.get<Compte>('http://localhost:8080/compte/findById/'+idCompte).pipe()
   }
+  getByUser(idUser: number){
+    return this.http.get<Compte[]>('http://localhost:8080/compte/compteByUser/'+idUser).pipe()
+  }
 }
