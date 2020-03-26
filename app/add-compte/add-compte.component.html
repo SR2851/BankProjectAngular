@@ -1,1 +1,20 @@
-<p>add-compte works!</p>
+
+<div class="container">
+    <form>
+        <h1>Ajouter un Compte:</h1>
+        <div class="form-group">
+            <label>Numéro de compte:</label><br>
+            <input type="text" name="nomCompte" class="form-control" id="nomCompte"
+                [(ngModel)]="newCompte.numeroCompte" placeholder="Numéro du compte"><br>
+            <label>Libellé:</label><br>
+            <input type="text" name="libelleCompte" class="form-control" id="libelleCompte"
+                [(ngModel)]="newCompte.libelle" placeholder="Libellé du compte"><br>
+            <label for="role">Propriétaire:</label><br>
+            <select name="role" class="form-control" id="role" [(ngModel)]="newCompte.user" >
+                <option *ngFor="let unUser of listUser" [ngValue]="unUser">{{unUser.prenomUser}} {{unUser.nomUser}}</option>
+            </select>
+
+            <input type="submit" value="Ajouter" class="btn btn-dark" (click)="addCompte()">
+        </div>
+    </form>
+</div>

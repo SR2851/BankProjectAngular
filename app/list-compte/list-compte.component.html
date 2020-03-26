@@ -1,1 +1,25 @@
-<p>list-compte works!</p>
+<div class="container">
+    <h1>Liste des comptes</h1>
+    <table class="table">  
+    <thead class="thead-dark">
+        <th scope="col">Id</th>
+        <th scope="col">Libellé</th>
+        <th scope="col">Numéro de compte</th>
+        <th scope="col">Solde</th>
+        <th scope="col">Propriétaire</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unCompte of listCompte" >
+        <th scope="row">{{unCompte.idCompte}}</th>
+        <td>{{unCompte.libelle}}</td>
+        <td>{{unCompte.numeroCompte}}</td>
+        <td>{{unCompte.solde}}</td>
+        <td>{{unCompte.user.prenomUser}} {{unCompte.user.nomUser}}</td>
+        <td><button class="btn btn-danger"  (click)="deleteCompte(unCompte.idCompte, unCompte.libelle, unCompte.numeroCompte)">Supprimer</button>
+            <a class="btn btn-primary"  [routerLink]="['/compte/update/'+unCompte.idCompte]">Modifier</a>
+            <a class="btn btn-dark"  [routerLink]="['/compte/findById/'+unCompte.idCompte]">Opérations</a></td>
+              </tr>    
+    </tbody>
+</table>
+</div>

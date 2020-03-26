@@ -10,10 +10,10 @@ export class CompteService {
   constructor(private http: HttpClient) { }
 
   getAll(){
-    return this.http.get<Compte[]>('http://localhost:8080/compte/list').pipe()
+    return this.http.get<Compte[]>('http://localhost:8080/compte/all').pipe()
   }
   addCompte(Compte : Compte){
-    return this.http.post<Compte>('http://localhost:8080/compte',Compte).pipe()
+    return this.http.post<Compte>('http://localhost:8080/compte/create',Compte).pipe()
     //envoie moi la requette post sur postmann avec Compte comme corps de reuette
   }
   deleteCompte(idCompte : number){

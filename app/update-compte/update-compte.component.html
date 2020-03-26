@@ -1,1 +1,11 @@
-<p>update-compte works!</p>
+<div class="container">
+    <form>
+        <div class="form-group">
+          <h1>Modifier un compte:</h1>
+          <label>Libellé:</label><br>
+            <input type="text" name="libelle" class="form-control" id="libelle"
+                [(ngModel)]="newCompte.libelle" placeholder="nouveau libellé du compte"><br>
+            <input type="submit" value="Modifier" class="btn btn-dark" (click)="updateCompte(newCompte.idCompte, newCompte)">
+        </div>
+    </form>
+</div>
