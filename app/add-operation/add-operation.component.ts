@@ -3,6 +3,8 @@ import { Operation } from '../Model/Operation';
 
 import { OperationService } from '../Service/Operation.service';
 import Swal from 'sweetalert2';
+import { Compte } from '../Model/Compte';
+import { CompteService } from '../Service/Compte.service';
 
 @Component({
   selector: 'app-add-operation',
@@ -11,22 +13,22 @@ import Swal from 'sweetalert2';
 })
 export class AddOperationComponent implements OnInit {
 newOperation: Operation= new Operation();
-newOperation1: Operation = new Operation();
-newOperation2: Operation = new Operation();
-listOperation: Operation[]=[];
+newCompte1: Compte = new Compte();
+newCompte2: Compte = new Compte();
+listCompte: Compte[]=[];
   
 
-  constructor(private operationService: OperationService, private OperationService:OperationService) { }
+  constructor(private operationService: OperationService, private compteService:CompteService) { }
 
   ngOnInit(): void {
-    this.OperationService.getAll().subscribe(
+    this.compteService.getAll().subscribe(
       data => {
-        this.listOperation=data;
+        this.listCompte=data;
       }
     )
   }
   addOperation(Operation: Operation){
-    this.OperationService.addOperation(this.newOperation).subscribe(
+    this.operationService.addOperation(this.newOperation).subscribe(
       data => {
         if (data['idOperation'] == 0){
           Swal.fire({
@@ -44,7 +46,7 @@ listOperation: Operation[]=[];
             showConfirmButton: true,
             timer: 1500
           }).then( () => {
-            window.location.href = "http://localhost:4200/Operation"
+            window.location.href = "http://localhost:4200/operation"
           })
         }
       }

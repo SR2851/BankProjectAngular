@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { User } from '../Model/User';
+import { Login } from '../Model/Login';
 
 
 @Injectable({
@@ -26,4 +27,7 @@ export class UserService {
   getById(idUser: number){
 return this.http.get<User>('http://localhost:8080/user/findById/'+idUser).pipe()
   }
+  login(login: Login){
+    return this.http.post<User>('http://localhost:8080/user/login', login).pipe()
+      }
 }

@@ -1,0 +1,31 @@
+<br><br><br><div class="container-fuild">
+    <div class="row">
+    <div class="col-lg-5">
+
+    </div>
+    <div class="col-lg-2">
+        <form>
+            <h1>Login:</h1>
+            <div class="form-group">
+                <label>Identifiant:</label><br>
+                <input type="text" name="identifiant" class="form-control" id="identification"
+                    [(ngModel)]="user.login"><br>
+                <label>Mot de passe:</label><br>
+                <input type="password" name="password" class="form-control" id="password"
+                    [(ngModel)]="user.password"><br>
+
+
+                <input type="submit" value="S'identifier" class="btn btn-dark" (click)="login()">
+                <a class="link" href="http://localhost:4200/user" id="addUser" role="button" style="color: black;">
+                    Créer un compte
+                </a>
+            </div>
+        </form>
+        
+    </div>
+    <div class="col-lg-5">
+
+    </div>
+</div>
+    
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

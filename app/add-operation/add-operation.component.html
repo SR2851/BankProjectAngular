@@ -1,23 +1,26 @@
-<div class="container">
+<br><br><br><div class="container">
     <form>
         <h1>Effectuer une opération banquaire:</h1>
         <div class="form-group">
             <label>Numéro de Transaction:</label><br>
-            <input type="text" name="nomOperation" class="form-control" id="nomOperation"
-                [(ngModel)]="newOperation.numeroOperation" placeholder="16 chiffres"><br>
-            <label>Code 4 chiffres:</label><br>
-            <input type="text" name="codeOperation" class="form-control" id="codeOperation"
-                [(ngModel)]="newOperation.codeOperation" placeholder="code à 4 chiffres de la Operation"><br>
+            <input type="text" name="numOperation" class="form-control" id="numOperation"
+                [(ngModel)]="newOperation.numOperation" placeholder="16 chiffres"><br>
+            <label>Montant:</label><br>
+            <input type="text" name="montant" class="form-control" id="montant"
+                [(ngModel)]="newOperation.montant" placeholder="montant du transfert"><br>
                 <label for="compte1">Compte emetteur:</label><br>
-                <select name="compte1" class="form-control" id="compte1" [(ngModel)]="newOperation.compte" >
-                    <option *ngFor="let unCompte of listCompte" [ngValue]="unCompte">{{unCompte.numeroCompte}} {{unCompte.libelle}}</option>
+                <select name="compte1" class="form-control" id="compte1" [(ngModel)]="newOperation.compte1" >
+                    <option *ngFor="let unCompte of listCompte" [ngValue]="unCompte">{{unCompte.user.nomUser}} {{unCompte.user.prenomUser}}: {{unCompte.numeroCompte}} {{unCompte.libelle}}</option>
                 </select>
             <label for="compte2">Compte recepteur:</label><br>
-            <select name="compte2" class="form-control" id="compte2" [(ngModel)]="newOperation.compte" >
-                <option *ngFor="let unCompte of listCompte" [ngValue]="unCompte">{{unCompte.numeroCompte}} {{unCompte.libelle}}</option>
+            <select name="compte2" class="form-control" id="compte2" [(ngModel)]="newOperation.compte2" >
+                <option *ngFor="let unCompte of listCompte" [ngValue]="unCompte">{{unCompte.user.nomUser}} {{unCompte.user.prenomUser}}: {{unCompte.numeroCompte}} {{unCompte.libelle}}</option>
             </select>
+            <label>Date de Transaction:</label><br>
+            <input type="datetime" name="date" class="form-control" id="date"
+                [(ngModel)]="newOperation.dateOperation" placeholder="date"><br>
 
             <input type="submit" value="Ajouter" class="btn btn-dark" (click)="addOperation(newOperation)">
         </div>
     </form>
-</div>
+</div><br><br><br><br><br><br>

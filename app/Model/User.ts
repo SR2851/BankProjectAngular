@@ -1,9 +1,9 @@
 export class User{
     "idUser": number;
-    "nomUser": String;
-    "prenomUser": String;
-    "identifiant": String;
-    "password": String;
-    "emailUser": String;
+    "nomUser": string;
+    "prenomUser": string;
+    "identifiant": string;
+    "password": string;
+    "emailUser": string;
     "role": object;
 }

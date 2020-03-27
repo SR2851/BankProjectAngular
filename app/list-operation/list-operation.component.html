@@ -1,1 +1,25 @@
-<p>list-operation works!</p>
+<br><br><br><div class="container">
+    <h1>Liste des opérations</h1>
+    <table class="table">  
+    <thead class="thead-dark">
+        <th scope="col">Id</th>
+        <th scope="col">Numéro opération</th>
+        <th scope="col">Montant</th>
+        <th scope="col">Compte emetteur</th>
+        <th scope="col">compte récepteur</th>
+        <th scope="col">date</th>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let unOperation of listOperation" >
+        <th scope="row">{{unOperation.idOperation}}</th>
+        <td>{{unOperation.numOperation}}</td>
+        <td>{{unOperation.montant}}</td>
+        <td>{{unOperation.compte1.libelle}}: {{unOperation.compte1.numeroCompte}}<br> - {{unOperation.compte1.user.nomUser}} {{unOperation.compte1.user.prenomUser}}</td>
+        <td>{{unOperation.compte2.libelle}}: {{unOperation.compte2.numeroCompte}}<br> - {{unOperation.compte2.user.nomUser}} {{unOperation.compte2.user.prenomUser}}</td>
+        <td>{{unOperation.date}}</td>
+        
+              </tr>    
+    </tbody>
+</table>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

@@ -13,11 +13,14 @@ export class OperationService {
     return this.http.get<Operation[]>('http://localhost:8080/operation/list').pipe()
   }
   addOperation(Operation : Operation){
-    return this.http.post<Operation>('http://localhost:8080/operation',Operation).pipe()
+    return this.http.post<Operation>('http://localhost:8080/operation/create',Operation).pipe()
     //envoie moi la requette post sur postmann avec Operation comme corps de reuette
   }
  
   getById(idOperation: number){
 return this.http.get<Operation>('http://localhost:8080/operation/findById/'+idOperation).pipe()
+  }
+  getByCompte(idCompte: number){
+    return this.http.get<Operation[]>('http://localhost:8080/operation/operationByCompte/'+idCompte).pipe()
   }
 }

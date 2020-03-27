@@ -21,6 +21,9 @@ import { UpdateRoleComponent } from './update-role/update-role.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { AuthentificationComponent } from './authentification/authentification.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { BottomerComponent } from './bottomer/bottomer.component';
 
 
 
@@ -43,6 +46,9 @@ import {FormsModule} from '@angular/forms';
     UpdateOperationComponent,
     UpdateRoleComponent,
     HeaderComponent,
+    AuthentificationComponent,
+    HomepageComponent,
+    BottomerComponent,
    
   
   ],

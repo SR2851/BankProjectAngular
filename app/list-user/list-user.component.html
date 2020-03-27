@@ -1,4 +1,4 @@
-<div class="container">
+<br><br><br><div class="container">
     <h1>Liste des utilisateurs</h1>
     <table class="table">  
     <thead class="thead-dark">
@@ -18,10 +18,14 @@
         <td>{{unUser.identifiant}}</td>
         <td>{{unUser.emailUser}}</td>
         <td>{{unUser.role.nomRole}}</td>
-        <td><button class="btn btn-danger"  (click)="deleteUser(unUser.idUser, unUser.nomUser, unUser.prenomUser)">Supprimer</button>
-            <a class="btn btn-primary"  [routerLink]="['/user/update/'+unUser.idUser]">Modifier</a>
-            <a class="btn btn-dark"  [routerLink]="['/compte/list/'+unUser.idUser]">Comptes</a></td>
+        <td><div class="btn-group" role="group" aria-label="Basic example">
+            <button class="btn btn-danger"  (click)="deleteUser(unUser.idUser, unUser.nomUser, unUser.prenomUser)">Supprimer</button>
+            <button type="button" class="btn btn-primary"  [routerLink]="['/user/update/'+unUser.idUser]">Modifier</button>
+            <button type="button" class="btn btn-dark"  [routerLink]="['/compte/list/'+unUser.idUser]">Comptes</button>
+          </div>
+        </td>
               </tr>    
     </tbody>
 </table>
 </div>
+<br><br><br><br><br><br>

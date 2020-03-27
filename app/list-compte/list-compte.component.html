@@ -1,4 +1,4 @@
-<div class="container">
+<br><br><br><div class="container">
     <h1>Liste des comptes</h1>
     <table class="table">  
     <thead class="thead-dark">
@@ -18,8 +18,11 @@
         <td>{{unCompte.user.prenomUser}} {{unCompte.user.nomUser}}</td>
         <td><button class="btn btn-danger"  (click)="deleteCompte(unCompte.idCompte, unCompte.libelle, unCompte.numeroCompte)">Supprimer</button>
             <a class="btn btn-primary"  [routerLink]="['/compte/update/'+unCompte.idCompte]">Modifier</a>
-            <a class="btn btn-dark"  [routerLink]="['/compte/findById/'+unCompte.idCompte]">Opérations</a></td>
+            <a class="btn btn-dark"  [routerLink]="['/operation/list/'+unCompte.idCompte]">Opérations</a></td>
               </tr>    
     </tbody>
-</table>
+</table><br>
+<a class="btn btn-primary"  [routerLink]="['/operation']">Nouveau virement</a>
+
 </div>
+<br><br><br><br><br><br><br><br><br>

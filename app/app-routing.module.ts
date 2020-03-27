@@ -15,6 +15,9 @@ import { UpdateRoleComponent } from './update-role/update-role.component';
 import { UpdateCarteComponent } from './update-carte/update-carte.component';
 import { UpdateCompteComponent } from './update-compte/update-compte.component';
 import { UpdateOperationComponent } from './update-operation/update-operation.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AuthGuardService } from './Service/auth-guard.service';
 
 
 
@@ -22,6 +25,10 @@ const routes: Routes = [
   {
     path: "user",
     component: AddUserComponent
+  },
+  {
+    path: "login",
+    component: AuthentificationComponent
   },
   {
     path: "role",
@@ -56,10 +63,8 @@ const routes: Routes = [
     component: ListCompteComponent
   },
   
-  
-  
   {
-    path: "operation/list",
+    path: "operation/list/:id",
     component: ListOperationComponent
   },
   {
@@ -82,6 +87,12 @@ const routes: Routes = [
     path: "operation/update/:id",
     component: UpdateOperationComponent
   },
+  {
+    path: "homepage",
+    component: HomepageComponent,
+    canActivate : [AuthGuardService]
+  },
+ 
 ];
 
 @NgModule({
