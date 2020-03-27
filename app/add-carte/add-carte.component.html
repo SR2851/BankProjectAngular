@@ -1,1 +1,23 @@
-<p>add-carte works!</p>
+<div class="container">
+    <form>
+        <h1>Ajouter une Carte:</h1>
+        <div class="form-group">
+            <label>Numéro de carte:</label><br>
+            <input type="text" name="nomCarte" class="form-control" id="nomCarte"
+                [(ngModel)]="newCarte.numeroCarte" placeholder="16 chiffres"><br>
+            <label>Code 4 chiffres:</label><br>
+            <input type="text" name="codeCarte" class="form-control" id="codeCarte"
+                [(ngModel)]="newCarte.codeCarte" placeholder="code à 4 chiffres de la carte"><br>
+            <label for="user">Propriétaire:</label><br>
+            <select name="user" class="form-control" id="user" [(ngModel)]="newCarte.user" >
+                <option *ngFor="let unUser of listUser" [ngValue]="unUser">{{unUser.prenomUser}} {{unUser.nomUser}}</option>
+            </select>
+            <label for="compte">Compte:</label><br>
+            <select name="compte" class="form-control" id="compte" [(ngModel)]="newCarte.compte" >
+                <option *ngFor="let unCompte of listCompte" [ngValue]="unCompte">{{unCompte.numeroCompte}} {{unCompte.libelle}}</option>
+            </select>
+
+            <input type="submit" value="Ajouter" class="btn btn-dark" (click)="addCarte(newCarte)">
+        </div>
+    </form>
+</div>

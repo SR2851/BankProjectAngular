@@ -1,1 +1,23 @@
-<p>add-operation works!</p>
+<div class="container">
+    <form>
+        <h1>Effectuer une opération banquaire:</h1>
+        <div class="form-group">
+            <label>Numéro de Transaction:</label><br>
+            <input type="text" name="nomOperation" class="form-control" id="nomOperation"
+                [(ngModel)]="newOperation.numeroOperation" placeholder="16 chiffres"><br>
+            <label>Code 4 chiffres:</label><br>
+            <input type="text" name="codeOperation" class="form-control" id="codeOperation"
+                [(ngModel)]="newOperation.codeOperation" placeholder="code à 4 chiffres de la Operation"><br>
+                <label for="compte1">Compte emetteur:</label><br>
+                <select name="compte1" class="form-control" id="compte1" [(ngModel)]="newOperation.compte" >
+                    <option *ngFor="let unCompte of listCompte" [ngValue]="unCompte">{{unCompte.numeroCompte}} {{unCompte.libelle}}</option>
+                </select>
+            <label for="compte2">Compte recepteur:</label><br>
+            <select name="compte2" class="form-control" id="compte2" [(ngModel)]="newOperation.compte" >
+                <option *ngFor="let unCompte of listCompte" [ngValue]="unCompte">{{unCompte.numeroCompte}} {{unCompte.libelle}}</option>
+            </select>
+
+            <input type="submit" value="Ajouter" class="btn btn-dark" (click)="addOperation(newOperation)">
+        </div>
+    </form>
+</div>

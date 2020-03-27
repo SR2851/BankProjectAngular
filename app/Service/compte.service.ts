@@ -28,4 +28,7 @@ return this.http.get<Compte>('http://localhost:8080/compte/findById/'+idCompte).
   getByUser(idUser: number){
     return this.http.get<Compte[]>('http://localhost:8080/compte/compteByUser/'+idUser).pipe()
   }
+  getByUsers(idUser: number){
+    return this.http.get<Compte[]>('http://localhost:8080/compte/compteByUsers').pipe()
+  }
 }
