@@ -1,4 +1,4 @@
-<br><br><br><div class="container">
+<app-header></app-header><br><br><br><div class="container">
     <h1>Liste des comptes</h1>
     <table class="table">  
     <thead class="thead-dark">
@@ -16,13 +16,24 @@
         <td>{{unCompte.numeroCompte}}</td>
         <td>{{unCompte.solde}}</td>
         <td>{{unCompte.user.prenomUser}} {{unCompte.user.nomUser}}</td>
-        <td><button class="btn btn-danger"  (click)="deleteCompte(unCompte.idCompte, unCompte.libelle, unCompte.numeroCompte)">Supprimer</button>
-            <a class="btn btn-primary"  [routerLink]="['/compte/update/'+unCompte.idCompte]">Modifier</a>
-            <a class="btn btn-dark"  [routerLink]="['/operation/list/'+unCompte.idCompte]">Opérations</a></td>
+        <td><div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <button type="button" class="btn btn-danger"  (click)="deleteCompte(unCompte.idCompte, unCompte.libelle, unCompte.numeroCompte)">Supprimer</button>
+            <button type="button" class="btn btn-primary"  [routerLink]="['/compte/update/'+unCompte.idCompte]">Modifier</button>
+          
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Opérations
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" [routerLink]="['/operation/list1/'+unCompte.idCompte]">Compte débité</a>
+                <a class="dropdown-item" [routerLink]="['/operation/list2/'+unCompte.idCompte]">Compte crédité</a>
+              </div>
+            </div>
+          </div></td>
               </tr>    
     </tbody>
 </table><br>
-<a class="btn btn-primary"  [routerLink]="['/operation']">Nouveau virement</a>
+<a  class="btn btn-primary"  [routerLink]="['/operation']">Nouveau virement</a>
 
 </div>
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

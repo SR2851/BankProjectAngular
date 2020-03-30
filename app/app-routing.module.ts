@@ -18,14 +18,17 @@ import { UpdateOperationComponent } from './update-operation/update-operation.co
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuardService } from './Service/auth-guard.service';
+import { RoleGuardService } from './Service/role-guard.service';
 
 
 
 const routes: Routes = [
+
   {
     path: "user",
     component: AddUserComponent
   },
+  
   {
     path: "login",
     component: AuthentificationComponent
@@ -36,11 +39,13 @@ const routes: Routes = [
   },
   {
     path: "carte",
-    component: AddCarteComponent
+    component: AddCarteComponent,
+    canActivate: [RoleGuardService]
   },
   {
     path: "compte",
-    component: AddCompteComponent
+    component: AddCompteComponent,
+    canActivate: [RoleGuardService]
   },
   {
     path: "operation",
@@ -64,7 +69,11 @@ const routes: Routes = [
   },
   
   {
-    path: "operation/list/:id",
+    path: "operation/list1/:id",
+    component: ListOperationComponent
+  },
+  {
+    path: "operation/list2/:id",
     component: ListOperationComponent
   },
   {

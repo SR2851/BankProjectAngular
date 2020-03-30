@@ -24,6 +24,7 @@ import {FormsModule} from '@angular/forms';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { BottomerComponent } from './bottomer/bottomer.component';
+import { ListCompe2Component } from './list-compe2/list-compe2.component';
 
 
 
@@ -49,6 +50,7 @@ import { BottomerComponent } from './bottomer/bottomer.component';
     AuthentificationComponent,
     HomepageComponent,
     BottomerComponent,
+    ListCompe2Component,
    
   
   ],

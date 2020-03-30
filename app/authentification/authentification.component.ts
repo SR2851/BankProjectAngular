@@ -27,7 +27,7 @@ userLoggedIn: User = new User();
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Utilisateur ajouté!',
+      title: 'Authentification réussie!',
       showConfirmButton: true,
       timer: 1500
     }).then( () => {

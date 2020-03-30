@@ -20,7 +20,10 @@ export class OperationService {
   getById(idOperation: number){
 return this.http.get<Operation>('http://localhost:8080/operation/findById/'+idOperation).pipe()
   }
-  getByCompte(idCompte: number){
-    return this.http.get<Operation[]>('http://localhost:8080/operation/operationByCompte/'+idCompte).pipe()
+  getByCompte1(idCompte: number){
+    return this.http.get<Operation[]>('http://localhost:8080/operation/operationByCompte1/'+idCompte).pipe()
+  }
+  getByCompte2(idCompte: number){
+    return this.http.get<Operation[]>('http://localhost:8080/operation/operationByCompte2/'+idCompte).pipe()
   }
 }

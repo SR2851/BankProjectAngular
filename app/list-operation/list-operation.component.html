@@ -1,4 +1,4 @@
-<br><br><br><div class="container">
+<app-header></app-header><br><br><br><div class="container">
     <h1>Liste des opérations</h1>
     <table class="table">  
     <thead class="thead-dark">
@@ -17,7 +17,7 @@
         <td>{{unOperation.montant}}</td>
         <td>{{unOperation.compte1.libelle}}: {{unOperation.compte1.numeroCompte}}<br> - {{unOperation.compte1.user.nomUser}} {{unOperation.compte1.user.prenomUser}}</td>
         <td>{{unOperation.compte2.libelle}}: {{unOperation.compte2.numeroCompte}}<br> - {{unOperation.compte2.user.nomUser}} {{unOperation.compte2.user.prenomUser}}</td>
-        <td>{{unOperation.date}}</td>
+        <td >{{unOperation.dateOperation}}</td>
         
               </tr>    
     </tbody>

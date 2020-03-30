@@ -5,6 +5,7 @@ import { OperationService } from '../Service/Operation.service';
 import Swal from 'sweetalert2';
 import { Compte } from '../Model/Compte';
 import { CompteService } from '../Service/Compte.service';
+import { User } from '../Model/User';
 
 @Component({
   selector: 'app-add-operation',
@@ -13,6 +14,7 @@ import { CompteService } from '../Service/Compte.service';
 })
 export class AddOperationComponent implements OnInit {
 newOperation: Operation= new Operation();
+newUser: User=new User();
 newCompte1: Compte = new Compte();
 newCompte2: Compte = new Compte();
 listCompte: Compte[]=[];
